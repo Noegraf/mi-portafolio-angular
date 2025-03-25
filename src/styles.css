@@ -1,0 +1,32 @@
+
+/* Variables de colores */
+:root {
+  --primary-color: #454545;
+  --secondary-color: white;
+  --highlight-color: #AB63F8;
+  --text-muted: #E5E8E8;
+}
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+
+
+  /* Fondo animado con gradiente */
+body {
+  background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+/* Animación del gradiente de fondo */
+@keyframes backgroundAnimation {
+    0% {
+      background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
+    }
+    50% {
+      background: linear-gradient(108deg, rgba(247, 134, 179, 0.10) 0%, rgba(12, 189, 175, 0.10) 100%), #FFF;
+    }
+    100% {
+      background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
+    }
+  }
+  

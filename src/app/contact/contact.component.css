@@ -1,0 +1,119 @@
+/* Contenedor principal */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
+}
+
+/* Tarjeta de contacto */
+.contact-card {
+  background: var(--secondary-color);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.contact-card h1 {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.input-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--text-muted);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--primary-color);
+  background: transparent;
+  transition: border 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+}
+
+/* Botón de envío */
+button {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #9a52e5;
+}
+
+/* Redes sociales */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-links a {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  color: var(--highlight-color);
+}
+
+
+.success-message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--highlight-color);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-card {
+    width: 90%;
+  }
+}

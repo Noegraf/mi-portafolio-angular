@@ -1,0 +1,165 @@
+
+
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+/* Contenedor de la timeline: ocupa 80vh y usa scroll snap para mostrar de a 1 tarjeta */
+.timeline {
+  position: relative;
+  
+  height: 80vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+  -ms-overflow-style: none; /* Ocultar scrollbar en IE y Edge */
+}
+
+.timeline::-webkit-scrollbar {
+  display: none; /* Ocultar scrollbar en Webkit */
+}
+
+/* Cada evento ocupa toda la vista (80vh) y se centra verticalmente */
+.timeline-event {
+  scroll-snap-align: center;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-in-out;
+  opacity: 0.3;
+  transform: scale(0.95);
+  margin-bottom: 2em;
+}
+
+/* Evento activo: en el centro o cliqueado se muestra sin blur, a opacidad 1 y sin escalado */
+.timeline-event.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* fechas */
+.timeline-event .timeline-event-thumbnail {
+  
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  
+  color: var(--text-muted);
+  transition: color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+
+
+/* Al estar activo, el año se destaca */
+.timeline-event.active .timeline-event-thumbnail {
+  color: var(--primary-color);
+  filter: none;
+}
+
+/* Contenedor del contenido (sin caja dura) */
+.timeline-event-copy {
+  margin-left: 100px; /* espacio para que aparezca a la derecha de la línea */
+  width: calc(100% - 120px);
+  text-align: left;
+}
+
+/* Títulos y subtítulos */
+.timeline-event-copy h3 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5em 0;
+  color: var(--primary-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.timeline-event-copy h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  color: var(--primary-color);
+}
+
+.timeline-event-copy p {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+/* Destacar título al estar activo */
+.timeline-event.active .timeline-event-copy h3 {
+  color: var(--highlight-color);
+}
+
+/* Opcional: efecto blur en elementos fuera del foco */
+.timeline-event:not(.active) {
+  filter: blur(2px);
+}
+
+/* Al hover se reduce el blur y se resaltan los textos */
+.timeline-event:hover {
+  filter: blur(0);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-container {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.progress-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-list li {
+  width: 24px;
+  height: 16px;
+  background-color: var(--text-muted); /* Línea horizontal gris */
+  transition: background-color 0.3s ease;
+  border-radius: 16px;
+}
+
+.progress-list li.active {
+  background-color: var(--highlight-color); /* Línea activa en negro */
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .timeline {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-event .timeline-event-thumbnail {
+    left: -70px;
+    font-size: 1rem;
+  }
+  
+  .timeline-event-copy {
+    margin-left: 80px;
+    width: calc(100% - 100px);
+  }
+  
+  .timeline-event-copy h3 {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-event-copy h4 {
+    font-size: 1.1rem;
+  }
+}

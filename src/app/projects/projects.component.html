@@ -1,0 +1,45 @@
+<div id="container-carousel">
+  <!-- Carousel -->
+  <div id="carousel">
+    <div class="p-wrapper" [style.transform]="'translateY(-' + activePanelIndex * 110 + '%)'">
+      <section *ngFor="let panel of panels" [ngClass]="'panel_' + panel.id">
+        <!-- Fondo sutil -->
+        <div class="panel-background" 
+             [ngStyle]="{'background-image': 'url(' + panel.backgroundImage + ')'}">
+        </div>
+        <!-- Contenido de la tarjeta -->
+        <div class="card-content">
+          <!-- Imagen del proyecto con texto interno -->
+          <div class="project-preview">
+            <img *ngIf="panel.projectImage" [src]="panel.projectImage" alt="Project preview">
+            <div class="project-text">
+              <h1>{{ panel.title }}</h1>
+            </div>
+          </div>
+          <button (click)="openDetails(panel)">{{ panel.buttonText }}</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Navegación -->
+  <div id="navigation">
+    <label *ngFor="let panel of panels; let i = index"
+           (click)="selectPanel(i)"
+           [ngClass]="'label_' + panel.id"
+           [class.active]="i === activePanelIndex">
+      <span>{{ panel.id }}</span>
+    </label>
+  </div>
+</div>
+
+<!-- Modal para ver detalles -->
+<div class="modal-overlay" *ngIf="selectedPanelDetail" (click)="closeDetails()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeDetails()">X</button>
+    <h2>{{ selectedPanelDetail.title }}</h2>
+    <p>{{ selectedPanelDetail.details }}</p>
+    <!-- Puedes agregar más información o secciones aquí -->
+     
+  </div>
+</div>

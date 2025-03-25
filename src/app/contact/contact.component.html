@@ -1,0 +1,39 @@
+<div class="contact-container">
+    <div class="contact-card">
+      <h1>Contacto</h1>
+      <p>Hablemos sobre ideas, proyectos o simplemente conectemos.</p>
+  
+      <!-- Formulario con Formspree y mensaje de éxito personalizado -->
+      <form action="{{ formspreeUrl }}" method="POST" (submit)="handleSubmit($event)">
+        <div class="input-group">
+          <input type="text" name="name" placeholder="Tu Nombre" required />
+        </div>
+        
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Tu Email" required />
+        </div>
+  
+        <div class="input-group">
+          <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+        </div>
+  
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+  
+      <!-- Mensaje de éxito oculto por defecto -->
+      <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+  
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/noegraf/" target="_blank" aria-label="LinkedIn">
+          <i class="ri-linkedin-box-line"></i>
+        </a>
+        <a href="https://github.com/noegraf" target="_blank" aria-label="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://www.behance.net/noegraf" target="_blank" aria-label="Behance">
+          <i class="ri-behance-line"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,16 @@
+<ul class="timeline">
+  <li *ngFor="let exp of experiences" class="timeline-event" #timelineEvent>
+    <label class="timeline-event-icon"></label>
+    <div class="timeline-event-copy">
+      <p class="timeline-event-thumbnail">{{ exp.start }} - {{ exp.end }}</p>
+      <h3>{{ exp.position }}</h3>
+      <h4>{{ exp.company }} - {{ exp.location }}</h4>
+      <p>{{ exp.description }}</p>
+    </div>
+  </li>
+</ul>
+<div class="progress-container">
+  <ul class="progress-list">
+    <li *ngFor="let exp of experiences; let i = index" [class.active]="activeIndex === i"></li>
+  </ul>
+</div>
