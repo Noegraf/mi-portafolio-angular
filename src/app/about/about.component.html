@@ -1,51 +1,24 @@
-<main class="about-container">
-  <section class="bio">
-    <h1>Acerca de Mí</h1>
-    <p>
-      Soy Noelia Valle, una apasionada Diseñadora UX/UI y Desarrolladora Full Stack Junior de Rosario, Argentina. Con formación en Bellas Artes, he complementado mi carrera con diplomaturas y cursos en diseño digital y desarrollo, lo que me permite crear experiencias interactivas y centradas en el usuario.
-    </p>
-    <p>
-      Mi enfoque se basa en la combinación de creatividad y tecnología para resolver problemas y transformar ideas en soluciones digitales escalables e intuitivas. Disfruto aprender continuamente y colaborar en proyectos que generen un impacto positivo.
-    </p>
-  </section>
+<!-- Al hacer click en el contenedor (fuera de cualquier carta) se desactiva la carta activa -->
+<div class="carousel-container" (click)="deactivate()">
+  <div class="card-wrapper" *ngFor="let card of cards; let i = index"
+       [ngStyle]="{'transform': computeTransform(i), 'z-index': computeZIndex(i)}">
+    <!-- El componente de carta recibe un input "active" y emite "cardSelected" -->
+    <app-about-card 
+         [title]="card.title" 
+         [icon]="card.icon" 
+         [content]="card.content"
+         [active]="activeIndex === i"
+         (cardSelected)="setActive(i)">
+    </app-about-card>
+  </div>
+</div>
 
-  <section class="education">
-    <h2>Formación Académica y Cursos</h2>
-    <ul>
-      <li>
-        <strong>Diplomatura UX/UI</strong> – Centro de e-Learning SCEU UTN-BA (en curso)
-      </li>
-      <li>
-        <strong>Desarrollador Full Stack Junior</strong> – ISPC, Córdoba (2022 - 2023)
-      </li>
-      <li>
-        <strong>Licenciatura en Bellas Artes</strong> – UNR, Rosario (2011 - 2016)
-      </li>
-      <li>
-        <strong>Diseño UX/UI</strong> – Agencia de Aprendizaje, Buenos Aires (Codo a Codo, 2022)
-      </li>
-      <li>
-        <strong>Cursos:</strong> Diseño de UX para videojuegos y Game Design (Udemy), UI - Design System y Product Manager (Coderhouse), Full Stack (Argentina Programa)
-      </li>
-    </ul>
-  </section>
-
-  <section class="skills">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skill-list">
-      <span>Figma</span>
-      <span>Design Thinking</span>
-      <span>Prototipado</span>
-      <span>Wireframing</span>
-      <span>Investigación UX</span>
-      <span>HTML &amp; CSS</span>
-    </div>
-  </section>
-
-  <section class="values">
-    <h2>Valores y Filosofía</h2>
-    <p>
-      Mi trabajo se basa en la comunicación efectiva, la colaboración interdisciplinaria y la adaptabilidad ante nuevos desafíos. Soy curiosa, me apasiona aprender y busco siempre la excelencia en cada proyecto.
-    </p>
-  </section>
-</main>
+<!-- Stepper: muestra el ícono de cada carta y resalta la activa -->
+<div class="stepper">
+  <div *ngFor="let card of cards; let i = index" 
+       class="step" 
+       [class.active]="i === activeIndex"
+       (click)="setActive(i); $event.stopPropagation()">
+    <img [src]="card.icon" alt="{{ card.title }} icon" />
+  </div>
+</div>

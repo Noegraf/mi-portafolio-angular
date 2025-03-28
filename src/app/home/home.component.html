@@ -1,14 +1,20 @@
-<div class="hero">
+<div class="layout">
+  <div class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">¡Hola! Soy Noelia Valle</h1>
-      <p class="hero-subtitle">Diseñadora UX/UI &amp; Desarrolladora Full Stack Junior</p>
-      <p class="hero-tagline">
-        Transformo ideas en experiencias digitales excepcionales.
-      </p>
+      <img src="assets/Iconos/Presentacion.svg" alt="Foto de perfil" class="hero-image">
+
+      <div class="texts"> 
+        <h1 class="hero-title">Noelia Valle</h1>
+        <p class="hero-subtitle">Diseñadora UX/UI</p>
+      </div>
+      
       <div class="hero-buttons">
-        <a routerLink="/projects" class="btn btn-primary">Ver Proyectos</a>
-        <a routerLink="/about" class="btn btn-secondary">Conocé Mi Historia</a>
+        <button (click)="downloadCV()">
+          <i class="ri-download-2-line"></i> Descargar CV
+        </button>
       </div>
     </div>
+    
   </div>
   
+</div>

@@ -1,0 +1,12 @@
+<div class="card-container" 
+     [class.flipped]="isFlipped" 
+     (click)="flipCard($event)">
+  <div class="card-front">
+    <img [src]="icon" alt="{{ title }} icon" class="icon" />
+    <h3>{{ title }}</h3>
+  </div>
+  <div class="card-back">
+    <img [src]="icon" alt="{{ title }} icon" class="icon-back" />
+    <p [innerHTML]="content"></p>
+  </div>
+</div>

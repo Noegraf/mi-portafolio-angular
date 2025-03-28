@@ -1,97 +1,43 @@
-/* Contenedor principal */
-.about-container {
-  
-  height: 80vh;
-  margin: 0 auto;
-  padding: 0px 24px 24px 24px;
-  color: #333;
-}
-
-/* Sección Bio */
-.bio {
-  margin-bottom: 40px;
-}
-
-.bio h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.bio p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-/* Sección Educación */
-.education {
-  margin-bottom: 40px;
-}
-
-.education h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.education ul {
-  list-style: none;
-  padding: 0;
-}
-
-.education li {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  padding-left: 20px;
+.carousel-container {
   position: relative;
-}
-
-.education li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #222;
-}
-
-/* Sección Habilidades */
-.skills {
-  margin-bottom: 40px;
-}
-
-.skills h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.skill-list {
+  width: 100%;
+  height: 70vh;
+  overflow: visible;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-wrapper {
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+/* Estilos del stepper */
+.stepper {
+  display: flex;
+  justify-content: center;
   gap: 10px;
+  margin-top: 20px;
 }
 
-.skill-list span {
-  background-color: #eee;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-/* Sección Valores */
-.values h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.step.active {
+  border-color: #e4347a;
 }
 
-.values p {
-  font-size: 1rem;
-  line-height: 1.6;
+.step img {
+  width: 24px;
+  height: 24px;
 }
 
-/* Animaciones suaves */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.about-container > section {
-  animation: fadeInUp 0.8s ease-out;
-}

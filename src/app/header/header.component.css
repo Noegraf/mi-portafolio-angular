@@ -1,9 +1,21 @@
+nav {
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+ display: flex;
+}
+
 ul {
+  box-sizing: border-box;
+  
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
   margin: 0;
   padding: 8px;
   gap: 4px;
-  overflow: hidden;
+ 
   background-color: var(--secondary-color);
   border-radius: 12px;
 }
@@ -28,3 +40,8 @@ li a:hover {
   border-radius: 8px;
 }
 
+li a.active {
+  background-color: var(--highlight-color);
+  color: var(--secondary-color);
+  border-radius: 8px;
+}

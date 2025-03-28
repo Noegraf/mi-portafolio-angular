@@ -23,20 +23,8 @@
 
   /* Fondo animado con gradiente */
 body {
-  background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
-  animation: backgroundAnimation 10s infinite alternate;
+  
+  background: linear-gradient(113deg, #FFFCFD 0%, #E5E6EB 276.24%);
+ height: 80vh;
 }
 
-/* Animación del gradiente de fondo */
-@keyframes backgroundAnimation {
-    0% {
-      background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
-    }
-    50% {
-      background: linear-gradient(108deg, rgba(247, 134, 179, 0.10) 0%, rgba(12, 189, 175, 0.10) 100%), #FFF;
-    }
-    100% {
-      background: linear-gradient(108deg, rgba(247, 134, 179, 0.04) 0%, rgba(12, 189, 175, 0.04) 100%), #FFF;
-    }
-  }
-  
