@@ -4,6 +4,7 @@ nav {
   align-items: center;
   z-index: 1;
  display: flex;
+
 }
 
 ul {
@@ -14,7 +15,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 8px;
-  gap: 4px;
+  
  
   background-color: var(--secondary-color);
   border-radius: 12px;
@@ -23,6 +24,7 @@ ul {
 li {
   float: left;
   border-radius: 8px;
+  
 }
 
 li a {
@@ -32,6 +34,7 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
   border-radius: 8px;
+  gap: 12px;
 }
 
 li a:hover {
@@ -45,3 +48,8 @@ li a.active {
   color: var(--secondary-color);
   border-radius: 8px;
 }
+
+a {
+  transition: all 0.3s ease-in-out;
+}
+

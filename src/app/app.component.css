@@ -1,0 +1,21 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .content {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: calc(100vh - 60px); /* Ajuste según el tamaño del header */
+  }
+  
+  section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+  

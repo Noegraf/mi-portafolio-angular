@@ -1,30 +1,8 @@
-/* Fuentes */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
-
-
 :root {
-  /* Color primario: Se usa para textos principales y elementos de navegación.
-     Un gris oscuro (#454545) que es neutro, elegante y fácil de leer. */
-  --primary-color: #454545;
-  
-  /* Color secundario: Se utiliza como fondo o para resaltar áreas que requieran contraste.
-     Un blanco puro para aportar claridad y limpieza. */
-  --secondary-color: #ffffff;
-  
-  /* Color de destaque (highlight): Se emplea para acentos, botones, enlaces o elementos activos.
-     Un morado vibrante (#AB63F8) que aporta energía y modernidad. */
-  --highlight-color: #AB63F8;
-  
-  /* Texto atenuado (text-muted): Se utiliza para información secundaria o desactivada,
-     un tono muy claro de gris (casi blanco) para no competir con el contenido principal. */
-  --text-muted: #E5E8E8;
-}
-
-
-  /* Fondo animado con gradiente */
-body {
-  
-  background: linear-gradient(113deg, #FFFCFD 0%, #E5E6EB 276.24%);
- height: 80vh;
-}
-
+   --color-bg: #f5f0e6; /* Fondo principal */
+   --color-accent: #c48f65; /* Acento cálido */
+   --color-text: #333; /* Texto principal */
+   --color-highlight: #f8c291; /* Resaltador */
+   --color-dark: #2c2c2c; /* Modo oscuro */
+ }
+ 
